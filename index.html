@@ -10,7 +10,7 @@
             background-image: url("para.jpg");
 
             /* Set a specific height */
-            min-height: 500px;
+            min-height: 250px;
 
             /* Create the parallax scrolling effect */
             background-attachment: fixed;
@@ -26,16 +26,29 @@
 
     <div class="parallax"></div>
 
-    <div style="height:1000px;background-color:red;font-size:36px">
+    <div style="height:1000px;background-color:red;font-size:56px">
         <p id="balls"></p>
 
         <script>
-            function makeid() {
-                var planes = ["Cessna 172", "Ilyushin Il-2", "Messerschmitt Bf 109", "Piper PA-28 series", "Cessna 150 / 152", "Cessna 182", "Supermarine Spitfire/Seafire", "Piper J-3 Cub", "Focke-Wulf Fw 190", "Polikarpov Po-2", "Consolidated B-24 Liberator", "Antonov An-2 / An-3", "Mikoyan-Gurevich MiG-15", "Mil Mi-8/Mi-17", "Beechcraft Bonanza", "Yakovlev Yak-9", "Douglas DC-3", "Bell UH-1 'Huey' Iroquois", "Republic P-47 Thunderbolt", "North American P-51 Mustang", "North American T-6 Texan", "Junkers Ju 88", "Hawker Hurricane", "Mikoyan-Gurevich MiG-21", "Waco CG-4", "Curtiss P-40 Warhawk", "Chotia Weedhopper", "Boeing B-17 Flying Fortress", "Vought F4U Corsair", "Grumman F6F Hellcat", "Vultee BT-13 Valiant", "Vickers Wellington", "Petlyakov Pe-2", "Avro 504", "Avro Anson", "Mooney M20", "Boeing 737", "Mitsubishi A6M Zero", "Piper Pacer", "Mikoyan-Gurevich MiG-17", "Polikarpov I-16", "Airbus A320 family", "Piper PA-18 Super Cub", "Lockheed P-38 Lightning", "Aeronca Champion", "DFS SG 38 Schulgleiter", "North American B-25 Mitchell", "Lavochkin La-5", "North American F-86 Sabre / FJ Fury", "Grumman TBF Avenger", "Bell P-39 Airacobra", "Cessna 210", "Beechcraft Model 18", "Airspeed Oxford", "Yakovlev Yak-1", "Boeing-Stearman Model 75", "Cessna 206", "SPAD S.XIII", "La Mouette Atlas", "Grumman F4F Wildcat", "Piper PA-32", "Breguet 14", "de Havilland Mosquito", "Fairchild PT-19", "Cessna 120 and 140", "Republic F-84 Thunderjet", "Douglas DB-7 (A-20 Havoc)", "Avro Lancaster", "Bell 206 JetRanger", "Heinkel He 111", "Yakovlev UT-2", "Curtiss SB2C Helldiver", "de Havilland Tiger Moth", "Polikarpov R-5", "Piper PA-23", "Beechcraft Baron", "Curtiss JN-4", "Polikarpov I-15", "Tupolev SB", "Ilyushin Il-28", "Yakovlev Yak-18", "Lockheed T-33 Shooting Star", "Yakovlev Yak-7", "Robinson R44", "Airco DH.4", "Lavochkin-Gorbunov-Gudkov LaGG-3", "Ilyushin Il-10", "Cessna 180", "Handley Page Halifax", "Cirrus SR22", "Messerschmitt Bf 110", "Junkers Ju 87", "Sopwith 1½ Strutter", "Douglas SBD Dauntless", "Bristol Beaufighter", "Nakajima Ki-43", "Yokosuka K5Y", "Lavochkin La-7", "Cessna 310", "Antonov A-1", "ERCO Ercoupe", "Mikoyan-Gurevich MiG-19", "Sopwith Camel", "Mil Mi-2", "Cessna AT-17 Bobcat", "Bristol F.2 Fighter", "Martin B-26 Marauder", "Stinson 108", "Ilyushin Il-4", "Royal Aircraft Factory S.E.5", "McDonnell Douglas F-4 Phantom II", "Cessna 170", "Mikoyan-Gurevich MiG-23", "Yakovlev Yak-12", "Grunau Baby IIb", "Boeing 727"];
-                return planes[Math.floor(Math.random() * planes.length)];
-                
+            var planes = ["Cessna 172", "Ilyushin Il-2", "Messerschmitt Bf 109", "Piper PA-28 series", "Cessna 150 / 152", "Cessna 182", "Supermarine Spitfire/Seafire", "Piper J-3 Cub", "Focke-Wulf Fw 190", "Polikarpov Po-2", "Consolidated B-24 Liberator", "Antonov An-2 / An-3", "Mikoyan-Gurevich MiG-15", "Mil Mi-8/Mi-17", "Beechcraft Bonanza", "Yakovlev Yak-9", "Douglas DC-3", "Bell UH-1 'Huey' Iroquois", "Republic P-47 Thunderbolt", "North American P-51 Mustang", "North American T-6 Texan", "Junkers Ju 88", "Hawker Hurricane", "Mikoyan-Gurevich MiG-21", "Waco CG-4", "Curtiss P-40 Warhawk", "Chotia Weedhopper", "Boeing B-17 Flying Fortress", "Vought F4U Corsair", "Grumman F6F Hellcat", "Vultee BT-13 Valiant", "Vickers Wellington", "Petlyakov Pe-2", "Avro 504", "Avro Anson", "Mooney M20", "Boeing 737", "Mitsubishi A6M Zero", "Piper Pacer", "Mikoyan-Gurevich MiG-17", "Polikarpov I-16", "Airbus A320 family", "Piper PA-18 Super Cub", "Lockheed P-38 Lightning", "Aeronca Champion", "DFS SG 38 Schulgleiter", "North American B-25 Mitchell", "Lavochkin La-5", "North American F-86 Sabre / FJ Fury", "Grumman TBF Avenger", "Bell P-39 Airacobra", "Cessna 210", "Beechcraft Model 18", "Airspeed Oxford", "Yakovlev Yak-1", "Boeing-Stearman Model 75", "Cessna 206", "SPAD S.XIII", "La Mouette Atlas", "Grumman F4F Wildcat", "Piper PA-32", "Breguet 14", "de Havilland Mosquito", "Fairchild PT-19", "Cessna 120 and 140", "Republic F-84 Thunderjet", "Douglas DB-7 (A-20 Havoc)", "Avro Lancaster", "Bell 206 JetRanger", "Heinkel He 111", "Yakovlev UT-2", "Curtiss SB2C Helldiver", "de Havilland Tiger Moth", "Polikarpov R-5", "Piper PA-23", "Beechcraft Baron", "Curtiss JN-4", "Polikarpov I-15", "Tupolev SB", "Ilyushin Il-28", "Yakovlev Yak-18", "Lockheed T-33 Shooting Star", "Yakovlev Yak-7", "Robinson R44", "Airco DH.4", "Lavochkin-Gorbunov-Gudkov LaGG-3", "Ilyushin Il-10", "Cessna 180", "Handley Page Halifax", "Cirrus SR22", "Messerschmitt Bf 110", "Junkers Ju 87", "Sopwith 1½ Strutter", "Douglas SBD Dauntless", "Bristol Beaufighter", "Nakajima Ki-43", "Yokosuka K5Y", "Lavochkin La-7", "Cessna 310", "Antonov A-1", "ERCO Ercoupe", "Mikoyan-Gurevich MiG-19", "Sopwith Camel", "Mil Mi-2", "Cessna AT-17 Bobcat", "Bristol F.2 Fighter", "Martin B-26 Marauder", "Stinson 108", "Ilyushin Il-4", "Royal Aircraft Factory S.E.5", "McDonnell Douglas F-4 Phantom II", "Cessna 170", "Mikoyan-Gurevich MiG-23", "Yakovlev Yak-12", "Grunau Baby IIb", "Boeing 727"];
+            var times = ["today", "right now"]
+
+            var real_time = new Date();
+            if (real_time.getHours() > 18){ // night
+                times.push("tonight")
             }
-            document.getElementById("balls").innerHTML = makeid();
+            else if (real_time.getHours() > 12){ // afternoon
+                times.push("this afternoon")
+            }
+            else if (real_time.getHours() < 10){ // morning
+                times.push("this morning")
+            }
+
+            var chosen = planes[Math.floor(Math.random() * planes.length)];
+            var ctime = times[Math.floor(Math.random() * times.length)];
+
+            
+            document.getElementById("balls").innerHTML = "A " + chosen + " will fall out of the sky " + ctime;
         </script>
     </div>
 
